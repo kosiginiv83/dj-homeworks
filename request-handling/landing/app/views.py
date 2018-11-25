@@ -26,6 +26,7 @@ def landing(request):
     ab_test_arg = request.GET.get('ab-test-arg')
     counter_show[ab_test_arg] += 1
     page = 'landing.html' if ab_test_arg == 'original' else 'landing_alternate.html'
+    
     return render_to_response(page)
 
 
