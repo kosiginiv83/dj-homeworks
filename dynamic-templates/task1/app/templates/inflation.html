@@ -28,23 +28,19 @@
           {% for row in base %}
             <tr>
               {% for unit in row.values %}
-                {% if unit >= 5 %}
-                  td_class = 'materialize-red-text text-darken-1'
-                  {{ th|add_class:"materialize-red-text text-darken-1" }}
-                {% endif %}
-                <th class="{{ td_class }}">{{ unit }}</th>
+                <th class={{ unit.class }}>{{ unit.val }}</th>
               {% endfor %}
             </tr>
           {% endfor %}
         </table>
 
-        td_class = {{ td_class }}
+        base = {{ base.0 }}
         <br>
         keys = {{ base.0.keys|length }}
         <br>
         items = {{ base.0.items }}
         <br>
-        {{ base|first|pprint }}
+        base|first = {{ base|first|pprint }}
         <br>
         raw = {{ base.0.Year }}
         <!--/ul-->
