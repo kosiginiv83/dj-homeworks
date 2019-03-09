@@ -537,7 +537,8 @@
 .white-text{color:#fff !important}
 .transparent{background-color:rgba(0,0,0,0) !important}
 .transparent-text{color:rgba(0,0,0,0) !important}
-/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
 article,aside,footer,header,nav,section{display:block}
 h1{font-size:2em;margin:0.67em 0}
@@ -806,7 +807,8 @@ table span.badge{display:inline-block;float:none;margin-left:auto}
 .row .col.offset-s12{margin-left:100%}
 .row .col.pull-s12{right:100%}
 .row .col.push-s12{left:100%}
-@media only screen and (min-width: 601px){.row .col.m1{width:8.3333333333%;margin-left:auto;left:auto;right:auto}
+@media only screen and (min-width: 601px){
+.row .col.m1{width:8.3333333333%;margin-left:auto;left:auto;right:auto}
 .row .col.m2{width:16.6666666667%;margin-left:auto;left:auto;right:auto}
 .row .col.m3{width:25%;margin-left:auto;left:auto;right:auto}
 .row .col.m4{width:33.3333333333%;margin-left:auto;left:auto;right:auto}
@@ -904,7 +906,8 @@ table span.badge{display:inline-block;float:none;margin-left:auto}
 .row .col.pull-l12{right:100%}
 .row .col.push-l12{left:100%}
 }
-@media only screen and (min-width: 1201px){.row .col.xl1{width:8.3333333333%;margin-left:auto;left:auto;right:auto}
+@media only screen and (min-width: 1201px){
+.row .col.xl1{width:8.3333333333%;margin-left:auto;left:auto;right:auto}
 .row .col.xl2{width:16.6666666667%;margin-left:auto;left:auto;right:auto}
 .row .col.xl3{width:25%;margin-left:auto;left:auto;right:auto}
 .row .col.xl4{width:33.3333333333%;margin-left:auto;left:auto;right:auto}

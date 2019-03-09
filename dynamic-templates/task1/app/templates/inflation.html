@@ -1,3 +1,5 @@
+{% load widget_tweaks %}
+
 <!DOCTYPE html>{% load static %}
 <html>
   <head>
@@ -16,13 +18,38 @@
     {% block content %}
       <div class="row">
         <h1 class="col s12">Инфляция в России</h1>
-        <ul class="col s12 m8">
-        
-        <!-- Ваша логика -->
+        <!--ul class="col s12 m8"-->
+        <table>
+          <tr>
+            {% for unit in th_names %}
+              <th style="font-size: 110%;">{{ unit }}</th>
+            {% endfor %}
+          </tr>
+          {% for row in base %}
+            <tr>
+              {% for unit in row.values %}
+                {% if unit >= 5 %}
+                  td_class = 'materialize-red-text text-darken-1'
+                  {{ th|add_class:"materialize-red-text text-darken-1" }}
+                {% endif %}
+                <th class="{{ td_class }}">{{ unit }}</th>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </table>
 
-        </ul>
+        td_class = {{ td_class }}
+        <br>
+        keys = {{ base.0.keys|length }}
+        <br>
+        items = {{ base.0.items }}
+        <br>
+        {{ base|first|pprint }}
+        <br>
+        raw = {{ base.0.Year }}
+        <!--/ul-->
       </div>
-    {% endblock %}
+    {% endblock content %}
 
   </body>
 </html>
