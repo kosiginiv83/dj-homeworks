@@ -28,21 +28,11 @@
           {% for row in base %}
             <tr>
               {% for unit in row.values %}
-                <th class={{ unit.class }}>{{ unit.val }}</th>
+                <th class='{{ unit.class }}'>{{ unit.val }}</th>
               {% endfor %}
             </tr>
           {% endfor %}
         </table>
-
-        base = {{ base.0 }}
-        <br>
-        keys = {{ base.0.keys|length }}
-        <br>
-        items = {{ base.0.items }}
-        <br>
-        base|first = {{ base|first|pprint }}
-        <br>
-        raw = {{ base.0.Year }}
         <!--/ul-->
       </div>
     {% endblock content %}

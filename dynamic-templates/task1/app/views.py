@@ -19,17 +19,21 @@ class InflationView(TemplateView):
 
         with open(base, encoding='UTF8', newline='') as file:
             file.readline()
-            reader = list(csv.DictReader(file, fieldnames=field_names, delimiter=';'))
+            reader = tuple(csv.DictReader(file, fieldnames=field_names, delimiter=';'))
+
+        reader = [ {key: (float(value.strip()) if (key != 'Year' and value != '') else \
+                    value) for key, value in x.items()} for x in reader ]
 
         base = []
         for row in reader:
             new_row = OrderedDict()
             for key, value in row.items():
-                if key == 'Year': new_row[key] = {'val': value, 'class': ''}
+                if value == '': new_row[key] = {'val': '-', 'class': ''}
+                elif key == 'Year': new_row[key] = {'val': value, 'class': ''}
                 elif key == 'Summ': new_row[key] = {'val': value, 'class': 'grey lighten-3'}
-                elif value > 5: new_row[key] = {'val': value, 'class': 'materialize-red lighten-1'}
-                elif value > 2 and value <= 5: new_row[key] = {'val': value, 'class': 'materialize-red lighten-3'}
-                elif value > 1 and value <= 2: new_row[key] = {'val': value, 'class': 'materialize-red lighten-5'}
+                elif value > 5: new_row[key] = {'val': value, 'class': 'red darken-3'}
+                elif value > 2 and value <= 5: new_row[key] = {'val': value, 'class': 'red'}
+                elif value > 1 and value <= 2: new_row[key] = {'val': value, 'class': 'red lighten-3'}
                 elif value < 0: new_row[key] = {'val': value, 'class': 'green lighten-3'}
                 else: new_row[key] = {'val': value, 'class': ''}
             base.append(new_row)
@@ -41,16 +45,3 @@ class InflationView(TemplateView):
         }
         return render(request, self.template_name,
                       context)
-
-
-
-#<p style="font-size: 120%; font-family: monospace; color: #cd66cc">Пример текста</p>
-#{{ unit|add_class:"materialize-red-text text-darken-1" }}
-'''
-{% if unit >= 5 %}
-{% endif %}
-
-{% with "materialize-red darken-1" as td_class %}
-<th class={{ td_class }}>{{ unit }}</th>
-{% endwith %}
-'''
