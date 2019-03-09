@@ -30,11 +30,11 @@ class InflationView(TemplateView):
             for key, value in row.items():
                 if value == '': new_row[key] = {'val': '-', 'class': ''}
                 elif key == 'Year': new_row[key] = {'val': value, 'class': ''}
-                elif key == 'Summ': new_row[key] = {'val': value, 'class': 'grey lighten-3'}
-                elif value > 5: new_row[key] = {'val': value, 'class': 'red darken-3'}
-                elif value > 2 and value <= 5: new_row[key] = {'val': value, 'class': 'red'}
-                elif value > 1 and value <= 2: new_row[key] = {'val': value, 'class': 'red lighten-3'}
-                elif value < 0: new_row[key] = {'val': value, 'class': 'green lighten-3'}
+                elif key == 'Summ': new_row[key] = {'val': value, 'class': 'grey lighten-1'}
+                elif value > 5: new_row[key] = {'val': value, 'class': 'red darken-4'}
+                elif value > 2 and value <= 5: new_row[key] = {'val': value, 'class': 'red lighten-1'}
+                elif value > 1 and value <= 2: new_row[key] = {'val': value, 'class': 'red lighten-4'}
+                elif value < 0: new_row[key] = {'val': value, 'class': 'green'}
                 else: new_row[key] = {'val': value, 'class': ''}
             base.append(new_row)
 
