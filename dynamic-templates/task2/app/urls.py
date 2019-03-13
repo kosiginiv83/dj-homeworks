@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import HomeView, AboutView, ContactsView, \
-    ExamplesView
+from .views import HomeView, AboutView, ContactsView, ExamplesView, MainView
 
 
 urlpatterns = [
@@ -26,4 +25,5 @@ urlpatterns = [
     path('contacts/', ContactsView.as_view(), name='contacts'),
     path('examples/', ExamplesView.as_view(), name='examples'),
     path('admin/', admin.site.urls),
+    path('main/', MainView.as_view(), name='main'),
 ]

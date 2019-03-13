@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
+class MainView(TemplateView):
+    template_name = 'app/main.html'
+
 class HomeView(TemplateView):
     template_name = 'app/home.html'
 
