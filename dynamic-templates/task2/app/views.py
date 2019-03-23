@@ -13,7 +13,7 @@ class HomeView(TemplateView):
     template_name = 'app/home.html'
     def get(self, request, *args, **kwargs):
         context = {
-            'img': os.path.join(STATIC_ROOT, 'steve.jpg'),
+            'img': r'C:\_my\Netology\Django\dj_hw\dynamic-templates\task2\app\static\steve.jpg',
             'path': os.path.join(STATIC_ROOT, 'steve.jpg')
         }
         return render(request, self.template_name, context)
